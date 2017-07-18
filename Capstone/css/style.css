@@ -1,0 +1,544 @@
+/*
+    The color method used was HSL, primarily to allow for easier control over minor adjustments in color.
+    Colors used: hsl(17, 100%, 60%), hsl(0, 0%, 0%) and hsl(0, 0%, 100%)
+    with additional colors used, including hsl(212, 72%, 59%) and hsl(0, 0%, 50%).
+ */
+
+
+/* Grab 'Hindi' for h2s and Nunito Sans as the main font */
+@import url('https://fonts.googleapis.com/css?family=Hind:400,700|Nunito+Sans:400,600,700');
+
+
+/* Basic element styling, including additional resets and the setting of a new baseline for some properties */
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    /* Set the basic font size */
+    font-size: 18px;
+}
+
+h2 {
+    color: hsl(0, 0%, 100%);
+    font-family: 'Hind', sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 32px;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+p {
+    color: hsl(0, 0%, 100%);
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+}
+
+header, main, footer {
+    /* Set the default background color of the page */
+    background-color: hsl(0, 0%, 100%);
+}
+
+.mobile {
+    /* Attempt to hide all elements only relevant to the mobile version of the site.
+     Note: This might need to be redone with more specific selectors due to the usage of flexboxes. */
+    display: none;
+}
+
+
+/* Header styles */
+
+.header {
+    align-items: center;
+    height: 64px;
+}
+
+.header.wide {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 24px;
+}
+
+header .logo {
+    align-items: center;
+    display: flex;
+}
+
+header img {
+    text-align: left;
+}
+
+header span {
+    font-size: 1.25rem;
+    line-height: 64px;
+    text-transform: uppercase;
+}
+
+/* Style each of the words in the name */
+header span:nth-of-type(1) {
+    color: hsl(0, 0%, 0%);
+}
+
+header span:nth-of-type(2) {
+    color: hsl(17, 100%, 60%);
+}
+
+/* Style the header's menu */
+header nav a {
+    color: hsl(0, 0%, 29%);
+    padding-right: 16px;
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+header nav a:last-child {
+    padding-right: 0;
+}
+
+nav a:hover {
+    color: hsl(17, 100%, 60%);
+}
+
+
+/* Styles for the visually distinct sections of the ain content of the page */
+
+.page-section {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    padding: 32px 0 32px 24px;
+}
+
+.page-section:nth-child(odd) {
+     background-color: hsl(17, 100%, 60%);
+ }
+
+.page-section:nth-child(odd) p {
+    color: hsl(0, 0%, 0%);
+}
+
+.page-section:nth-child(even) h3 {
+    color: hsl(17, 100%, 60%);
+}
+
+.page-section:nth-child(even) p {
+    color: hsl(0, 0%, 0%);
+}
+
+.page-section:nth-child(even) h2 {
+    color: hsl(0, 100%, 0%);
+}
+
+
+/* The first section of content (banner) */
+
+/* Style the right side to force the text and button to take up a limited space as per the spec */
+.page-section.banner .section-aside {
+    width: 360px;
+}
+
+/* Style this section's button */
+.page-section .section-aside button {
+    background-color: hsl(0, 0%, 0%);
+    border: none;
+    color: hsl(0, 0%, 100%);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    height: 48px;
+    margin-top: 32px;
+    padding: 8px 0;
+    transition: all 0.5s ease;
+    width: 100%;
+}
+
+.page-section .section-aside button:hover {
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(17, 100%, 60%);
+}
+
+
+/* The second section of content (information) */
+
+.page-section.information {
+    align-items: stretch;
+    padding: 0;
+}
+
+.page-section .section-image {
+    padding: 32px 24px 0 0;
+    width: 60%;
+}
+
+.page-section .section-image img {
+    width: 100%;
+}
+
+.page-section .section-aside {
+    width: 423px;
+}
+
+.information {
+    align-items: flex-start;
+    display: flex;
+}
+
+.information .section-image {
+    padding: 32px 24px;
+}
+
+.information .section-image h2 {
+    margin-bottom: 0;
+    padding: 32px 0 24px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-section {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    padding: 16px 0 16px 16px;
+}
+
+.section-aside.info {
+    border-left: 2px solid hsl(0, 0%, 85%);
+}
+
+.information .info-section:first-of-type {
+    padding-top: 32px;
+}
+
+.info-section .wide {
+    width: 35%;
+}
+
+.info-section img {
+    width: 100%;
+}
+
+.exhibit-section .info-section img {
+    width: 35%;
+}
+
+.information .info-section:first-child img {
+    margin-top: 0;
+}
+
+.information .info-section:last-child {
+    background-color: hsl(17, 100%, 60%);
+}
+
+.information .info-section:last-child h3 {
+    color: hsl(0, 0%, 100%);
+}
+
+.information .info-section:last-child a {
+    color: hsl(0, 0%, 100%);
+}
+
+.information .info-section:last-child a:hover {
+    color: hsl(0, 0%, 0%);
+}
+
+.info-text {
+    display: flex;
+    flex-direction: column;
+    padding: 0 16px 0 32px;
+    width: 50%;
+}
+
+.info-text p {
+    margin: 8px 0;
+}
+
+.info-text a {
+    color: hsl(212, 72%, 59%);
+    font-weight: 600;
+    transition: color 0.25s ease;
+}
+
+.info-text a:hover {
+    color: hsl(17, 100%, 60%);
+}
+
+
+/* The third section of content (courses) */
+
+.course-section {
+    flex-direction: column;
+    padding-top: 0;
+}
+
+.course-section h2 {
+    margin: 32px auto 16px;
+}
+
+.courses {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.course {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 16px 32px 0 0;
+    width: 25%;
+}
+
+.course img {
+    width: 100%;
+}
+
+.course-description {
+    background-color: hsl(0, 0%, 100%);
+    /* Cause the .description div to stretch to fill any remaining space inside the .course div.
+     This will cause all of the divs in each row to match the height of the tallest div. */
+    flex-grow: 1;
+    padding: 16px 16px 24px;
+}
+
+.course-description h3 {
+    font-size: 2rem;
+}
+
+.course-section .course-description p {
+    color: hsl(0, 0%, 50%);
+    line-height: 2rem;
+}
+
+.course-description p:first-of-type {
+    padding: 8px 0;
+    text-transform: uppercase;
+}
+
+
+/* The fourth section of content (exhibits) */
+
+.exhibit-section {
+    flex-direction: column;
+}
+
+.exhibit-section .section-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.exhibit-section .section-aside {
+    display: flex;
+    flex-direction: column;
+    width: 423px;
+}
+
+.exhibit-info-section {
+    display: flex;
+}
+
+.exhibit-info-section img {
+    height: 136px;
+    width: 136px;
+}
+
+.video-container {
+    padding-right: 24px;
+    width: 60%;
+}
+
+.video-container video {
+    width: 100%;
+}
+
+.exhibit-section .info-section:first-child {
+    background-color: hsl(17, 100%, 60%);
+}
+
+.exhibit-section .info-section:first-child h3 {
+    color: hsl(0, 0%, 100%);
+}
+
+
+/* Styles for the footer */
+
+footer {
+    border-top: 2px solid hsl(0, 0%, 98%);
+    display: flex;
+    justify-content: space-between;
+    padding: 24px;
+}
+
+footer p, footer a {
+    color: hsl(0, 0%, 46%);
+}
+
+footer a {
+    padding-right: 32px;
+}
+
+
+/*
+   Create a fixed-width container for the site in order to better match the design laid out in the spec for screens
+   greater than 1180px (approximately the breakpoint at which the measurements, which when laid out left to right,
+   create extra negative space on the right side of the page and begins to break certain parts of the layout.
+ */
+@media screen and (min-width: 1180px) {
+    body {
+        background-color: hsl(0, 100%, 98%);
+        margin: 0 auto;
+        max-width: 1180px;
+    }
+}
+
+/* The following two media queries modify the widths of the .course divs to allow the heading text to fit for
+ all of the divs. Note: As no other major problems were seen in the layout for the widths covered in the wide
+ and mobile versions, no further modifications were made. */
+@media screen and (max-width: 800px) {
+    .course {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .course {
+        width: 80%;
+    }
+}
+
+
+/* Styles to create the mobile version of the site (for screens 470px or smaller) */
+@media screen and (max-width: 470px) {
+    /* Show most elements hidden in the wide-screen version of the site */
+    .mobile {
+        display: block;
+    }
+
+    /* Hide most elements shown in the wide-screen version of the site */
+    .wide {
+        display: none;
+    }
+
+    header .header.wide {
+        display: none;
+    }
+
+    header .header.mobile {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .page-section {
+        padding: 0 16px;
+    }
+
+    .page-section .section-image {
+        display: none;
+    }
+
+    .banner {
+        background-image: url('../images/banner.jpg');
+        background-size: cover;
+        height: 180px;
+    }
+
+    .banner .section-aside {
+        display: none;
+    }
+
+    .page-section .section-aside {
+        padding-left: 16px;
+        width: 100%;
+    }
+
+    .info-section {
+        align-items: flex-start;
+        border: none;
+        flex-direction: column;
+        padding: 16px 0;
+    }
+
+    .info-section img {
+        margin: 16px 0;
+        padding-left: 0;
+        width: 422px;
+    }
+
+    .info-text {
+        padding-left: 16px;
+    }
+
+    .information .info-section:last-child {
+        background-color: hsl(0, 0%, 100%);
+        padding-bottom: 32px;
+    }
+
+    .information .info-section:last-child h3 {
+        color: hsl(17, 100%, 60%);
+    }
+
+    .information .info-section:last-child a {
+        color: hsl(212, 72%, 59%);
+    }
+
+    .information .info-section:last-child a:hover {
+        color: hsl(17, 100%, 60%);
+    }
+
+    .page-section.course-section {
+        background-color: hsl(17, 100%, 60%);
+        border-bottom: 1px solid hsl(0, 0%, 95%);;
+        padding-bottom: 32px;
+    }
+
+    .courses {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .course {
+        width: 100%;
+    }
+
+    .course img, .course p {
+        display: none;
+    }
+
+    .course-description {
+        background-color: hsl(0, 0%, 100%);
+        height: auto;
+        padding: 16px;
+    }
+
+    .course-description h3 {
+        font-size: 1.75rem;
+    }
+
+    .page-section.exhibit-section {
+        padding: 32px 0 0;
+    }
+
+    .page-section.exhibit-section .section-aside {
+        display: none;
+    }
+
+    .video-container {
+        padding: 0;
+        width: 100%;
+    }
+
+    footer {
+        padding-top: 24px;
+    }
+
+    footer p {
+        padding: 16px 0;
+    }
+}
